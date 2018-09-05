@@ -1,0 +1,27 @@
+{
+  "name": "electron-rx-shell",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grahammcallister/Electron-Rx-Shell.git"
+  },
+  "author": "graham",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grahammcallister/Electron-Rx-Shell/issues"
+  },
+  "homepage": "https://github.com/grahammcallister/Electron-Rx-Shell#readme",
+  "devDependencies": {
+    "electron": "^2.0.8",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.3"
+  },
+  "dependencies": {
+    "redux": "^4.0.0"
+  }
+}
