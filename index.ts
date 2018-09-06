@@ -1,5 +1,8 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, ipcMain, remote } from "electron";
+
 import * as path from "path";
+
+import * as channels from "./channels";
 
 let mainWindow: Electron.BrowserWindow;
 
@@ -15,6 +18,10 @@ function createWindow() {
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
+
+  ipcMain.on(channels.BASKET_CHANNEL, (event: any, args: any) => {
+      console.log(`${JSON.stringify(args)}`);
+  });
 
   // Emitted when the window is closed.
   mainWindow.on("closed", () => {
@@ -49,3 +56,6 @@ app.on("activate", () => {
 
 // In this file you can include the rest of your app"s specific main process
 // code. You can also put them in separate files and require them here.
+
+import * as sharedApi from "./shared-api";
+
